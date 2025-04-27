@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Lydia Lipshutz",
+        "img": "/reviewer-1.jpg",
+        "comment": "The experience with Arangrant.com was excellent. It was really easy and hassle-free to work with anyone in AranGrant. Surprisingly, the AranGrant support is quick and responsive which I have never seen with any other Travel site."
+    },
+    {
+        "name": "Giana Dias",
+        "img": "/reviewer-2.jpg",
+        "comment": "I had a no pressure experience with Arangrant.com. My travel agent April was outstanding. She was kind, patient, and answered all my questions! She found me some great deals with my favorite airlines and helped me to choose the best option for me."
+    },
+    {
+        "name": "Edward Gordin",
+        "img": "/reviewer-3.jpg",
+        "comment": "Arangrant was excellent! I booked a round trip to Florence, the guy I spoke with made everything go easy and was very patient, stayed on the phone when I didn’t know what information to fill out. He deserves to be promoted, by the way, his name is Bradley. Will definitely be booking again next time I take a trip."
+    },
+    {
+        "name": "Maryn Pate",
+        "img": "/reviewer-4.jpg",
+        "comment": "After hours of searching through travel sites, I stopped at Arangrant, and I’m glad I did so. Amy asked relevant questions on my trip to the UK and came up with a great flight itinerary plus an inexpensive price. From now on, I will be dealing with Arangrant, and won’t be wasting my time on other booking agencies. All in all, great experience!!!"
+    },
+    {
+        "name": "Lydia Lipshutz",
+        "img": "/reviewer-1.jpg",
+        "comment": "The experience with Arangrant.com was excellent. It was really easy and hassle-free to work with anyone in AranGrant. Surprisingly, the AranGrant support is quick and responsive which I have never seen with any other Travel site."
+    },
+    {
+        "name": "Giana Dias",
+        "img": "/reviewer-2.jpg",
+        "comment": "I had a no pressure experience with Arangrant.com. My travel agent April was outstanding. She was kind, patient, and answered all my questions! She found me some great deals with my favorite airlines and helped me to choose the best option for me."
+    },
+    {
+        "name": "Edward Gordin",
+        "img": "/reviewer-3.jpg",
+        "comment": "Arangrant was excellent! I booked a round trip to Florence, the guy I spoke with made everything go easy and was very patient, stayed on the phone when I didn’t know what information to fill out. He deserves to be promoted, by the way, his name is Bradley. Will definitely be booking again next time I take a trip."
+    },
+    {
+        "name": "Maryn Pate",
+        "img": "/reviewer-4.jpg",
+        "comment": "After hours of searching through travel sites, I stopped at Arangrant, and I’m glad I did so. Amy asked relevant questions on my trip to the UK and came up with a great flight itinerary plus an inexpensive price. From now on, I will be dealing with Arangrant, and won’t be wasting my time on other booking agencies. All in all, great experience!!!"
+    }
+]

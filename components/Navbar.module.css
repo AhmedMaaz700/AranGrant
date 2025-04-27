@@ -1,0 +1,49 @@
+.navbar {
+    padding: 0 16px;
+}
+
+.navbarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 12px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.left > p {
+    font-size: 11px;
+    color: #fff;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button {
+    font-size: 13px;
+    color: #fff;
+}
+
+.call {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.call p:first-of-type {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.call p {
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+}

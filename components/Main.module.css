@@ -1,0 +1,46 @@
+.main {
+    padding: 12px 16px 22px;
+}
+
+.mainContainer {
+    margin: 128px 0 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 43px;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 11px;
+    text-align: left;
+}
+
+.mainContent > h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.mainContent > p {
+    font-size: 11px;
+    line-height: 1.22;
+    font-weight: 600;
+    color: #fff;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 580px;
+}

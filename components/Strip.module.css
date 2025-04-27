@@ -1,0 +1,21 @@
+.strip {
+    background-color: #F7F2ED;
+    padding: 16px 24px
+}
+
+.subtext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pTag1 {
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.pTag2 {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 600;
+}

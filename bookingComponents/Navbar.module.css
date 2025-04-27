@@ -1,0 +1,36 @@
+.navbar {
+    padding: 0 16px;
+}
+
+.navbarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 32px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.left > p {
+    font-size: 11px;
+    color: #fff;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button {
+    font-size: 13px;
+    color: #fff;
+}
+
+@media (max-width: 780px) {
+    
+}

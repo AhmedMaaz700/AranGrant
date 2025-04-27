@@ -1,0 +1,83 @@
+.footer {
+    background-color: #212123;
+    padding-top: 48px;
+    padding-right: 24px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+}
+
+.pTag {
+    text-align: center;
+    text-decoration: underline;
+    color: color-mix(in srgb, #FFFFFF calc((0.08 * 600) / 100 * 100%), transparent);
+    font-size: 10px;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+    margin-block-start: 32px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px 0px;
+    margin-block-start: 32px;
+    margin-inline: 15rem;
+    color: #ffffff52;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footerDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footerDivs > h3 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+  
+.logoTag {
+    text-decoration: underline;
+    color: color-mix(in srgb, #FFFFFF calc((calc(calc(0.08 * 600) / 100) * 100%)), transparent);
+    font-size: 11px;
+    line-height: 1.5;
+}
+  
+.footerNav {
+    line-height: 1.3;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.listItems{
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    position: relative;
+    color: color-mix(in srgb, #FFFFFF calc((calc(calc(0.08 * 1000) / 100) * 100%)), transparent);
+}
+
+.sMediaTag {
+    line-height:1.3;
+    font-size: 12px;;
+    color: color-mix(in srgb, #FFFFFF calc((calc(calc(0.08 * 1000) / 100) * 100%)), transparent);
+}
+
+.horizontalDivider {
+    background-color: color-mix(in srgb, #FFFFFF calc((calc(calc(0.08 * 1000) / 100) * 100%)), transparent);
+    height: 1px;
+}

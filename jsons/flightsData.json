@@ -1,0 +1,86 @@
+[
+    {
+        "tag": "Africa",
+        "city": "Johannesburg",
+        "type": "Business class from *",
+        "price": 148322,
+        "img": "/cities/Johannesburg-South_Africa-JNB.jpg"
+    },
+    {
+        "tag": "Africa",
+        "city": "Cape Town",
+        "type": "Business class from *",
+        "price": 149613,
+        "img": "/cities/Cape_Town-South_Africa-CPT.jpg"
+    },
+    {
+        "tag": "Africa",
+        "city": "Nairobi",
+        "type": "Business class from *",
+        "price": 151507,
+        "img": "/cities/Nairobi-Kenya-NBO.jpg"
+    },
+    {
+        "tag": "Africa",
+        "city": "Lagos",
+        "type": "Business class from *",
+        "price": 147891,
+        "img": "/cities/Lagos-Nigeria-LOS.jpg"
+    },
+    {
+        "tag": "Middle East",
+        "city": "Dubai",
+        "type": "Business class from *",
+        "price": 72460,
+        "img": "/cities/Dubai-UAE-DXB.jpg"
+    },
+    {
+        "tag": "Middle East",
+        "city": "Cairo",
+        "type": "Business class from *",
+        "price": 94651,
+        "img": "/cities/Cairo-Egypt-CAI.jpg"
+    },
+    {
+        "tag": "Middle East",
+        "city": "Istanbul",
+        "type": "Business class from *",
+        "price": 148236,
+        "img": "/cities/Istanbul-Turkey-IST.jpg"
+    },
+    {
+        "tag": "Middle East",
+        "city": "Rome",
+        "type": "Business class from *",
+        "price": 112490,
+        "img": "/cities/Rome-Italy-ROM.jpg"
+    },
+    {
+        "tag": "South Asia",
+        "city": "Delhi",
+        "type": "Business class from *",
+        "price": 148064,
+        "img": "/cities/Delhi-India-DEL.jpg"
+    },
+    {
+        "tag": "South Asia",
+        "city": "Mumbai",
+        "type": "Business class from *",
+        "price": 37166,
+        "img": "/cities/Mumbai-India-BOM.jpg"
+    },
+    {
+        "tag": "South Asia",
+        "city": "Kathmandu",
+        "type": "Business class from *",
+        "price": 147719,
+        "img": "/cities/Kathmandu-Nepal-KTM.jpg"
+    },
+    {
+        "tag": "South Asia",
+        "city": "Lahore",
+        "type": "Business class from *",
+        "price": 149871,
+        "img": "/cities/Lahore-Pakistan-LHE.jpg"
+    }
+]

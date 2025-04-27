@@ -1,0 +1,26 @@
+[
+    {
+        "star": 5,
+        "title": "Nayeli was so patient and a truly god…",
+        "content": "Nayeli was so patient and truly a godsend. She was super attentive and took the time to listen to all my concerns while booking a rushed flight for my father. She was polite and admirable in every aspect of customer service. She deserves a raise and a promotion for how well she settled all my issues and concerns. She is simply amazing.",
+        "date": "December 15, 2022",
+        "img": "/review-1.jpg",
+        "client": "Hank, USA"
+    },
+    {
+        "star": 5,
+        "title": "Kevin is phenomenal",
+        "content": "Kevin is wonderful! Although I am quite picky, he answered all my questions patiently and made this whole transaction smooth. My booking is still pending, however, I hope the rest of the process with AranGrant works the same way as dealing with Kevin.",
+        "date": "December 13, 2022",
+        "img": "/review-2.jpg",
+        "client": "Gayatri, US"
+    },
+    {
+        "star": 4,
+        "title": "Outstanding service from Zac",
+        "content": "This was my first time trying AranGrant. The initial agent set up my flight. One month before my trip I found out there was a flight change and I wasn’t notified. I tried calling but there was a glitch. I tried the chat line and got Zac who was kind and marked it as urgent. I got an email within 48 hours. I was lucky to have AranGrant as my travel agency.",
+        "date": "December 01, 2022",
+        "img": "/review-3.jpg",
+        "client": "Joan Berinstein, US"
+    }
+]
