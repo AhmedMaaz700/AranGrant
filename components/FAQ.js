@@ -21,7 +21,7 @@ export default function FAQ() {
                 <Typography component="span">{item.title}</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>{item.content}</Typography>
+                <Typography fontSize={'14px'}>{item.content}</Typography>
               </AccordionDetails>
             </Accordion>
           ))}         

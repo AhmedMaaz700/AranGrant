@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import { Box, Button, useMediaQuery  } from "@mui/material";
-import PhoneIcon from '@mui/icons-material/Phone';
 import Link from "next/link";
 
 export default function Navbar() { 
@@ -21,49 +20,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className={styles.right}>
-              {/* <Box
-                display="flex"
-                gap={1}
-                backgroundColor="#393948"
-                padding={1}
-                borderRadius={2}
-              >
-                <Button
-                  variant="contained"
-                  disableElevation
-                  sx={{
-                    backgroundColor: "transparent",
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: "12px",
-                    letterSpacing: "0.5px",
-                    paddingX: 3,
-                  }}
-                >
-                  FREE PHONE ONLY DEALS 24/7
-                </Button>
-                <Button
-                  variant="contained"
-                  startIcon={
-                    <Box
-                      component="img"
-                      src="/icons/call.svg"
-                      alt="phone"
-                      sx={{ width: 20, height: 20 }}
-                    />
-                  }
-                  sx={{
-                    backgroundColor: "#0E7C68",
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                    paddingX: 3,
-                    "&:hover": { backgroundColor: "#0E7C68" },
-                  }}
-                >
-                  +18336190908
-                </Button>
-              </Box> */}
+              
               {isMobile ? (
                 // Mobile version
                 <Box

@@ -15,20 +15,15 @@
     gap: 1rem;
 }
 
-.left > p {
-    font-size: 11px;
-    color: #fff;
-}
-
 .right {
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .button {
     font-size: 13px;
-    color: #fff;
 }
 
 .call {
@@ -47,3 +42,37 @@
     font-weight: 500;
     color: #fff;
 }
+
+.menuItems {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+  
+.menuItems > p {
+    font-size: 11px;
+    color: #fff;
+}
+
+.menuItems > p:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    cursor: pointer;
+}
+
+.mobileMenuItems {
+    display: none
+}
+
+@media (max-width: 600px) {
+    .menuItems {
+      display: none;
+    }
+
+    .mobileMenuItems {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+  

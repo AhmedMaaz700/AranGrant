@@ -1,7 +1,7 @@
 import styles from "./Main.module.css";
 import Image from "next/image";
 import { Button, TextField, MenuItem, Box, ToggleButton, ToggleButtonGroup, Grid } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -16,6 +16,14 @@ export default function Main() {
     const [departureDate, setDepartureDate] = useState(null);
     const [travelerCount, setTravelerCount] = useState('1');
     const [travelClass, setTravelClass] = useState('Business');
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth <= 780);
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleTripChange = (event, newTrip) => {
         if (newTrip !== null) setTripType(newTrip);
@@ -55,7 +63,6 @@ export default function Main() {
                   value={tripType}
                   exclusive
                   onChange={handleTripChange}
-                  // sx={{ mb: 2, gap: '12px' }}
                 >
                   {["roundtrip", "oneway", "multicity"].map((type) => (
                     <ToggleButton
@@ -98,7 +105,15 @@ export default function Main() {
                 <Grid container spacing={2} direction="column">
                   {/* 1st row */}
                   <Grid item>
-                    <Box sx={{ display: "flex", gap: 2 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 2,
+                        "@media (max-width:780px)": {
+                          flexDirection: "column",
+                        },
+                      }}
+                    >
                       <TextField
                         fullWidth
                         placeholder="From"
@@ -120,15 +135,36 @@ export default function Main() {
 
                   {/* 2nd row */}
                   <Grid item>
-                    <Box sx={{ display: "flex", gap: 2, width: "100%" }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 2,
+                        width: "100%",
+                        "@media (max-width:780px)": {
+                          flexDirection: "column",
+                        },
+                      }}
+                    >
                       {/* Left half: DatePicker */}
-                      <Box sx={{ width: "50%" }} >
-                        <LocalizationProvider dateAdapter={AdapterDayjs} >
-                          <DemoContainer components={["DatePicker"]} sx={{ paddingTop: 0 }}>
+                      <Box
+                        sx={{
+                          width: "50%",
+                          "@media (max-width:780px)": {
+                            width: "100%",
+                          },
+                        }}
+                      >
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DemoContainer
+                            components={["DatePicker"]}
+                            sx={{ paddingTop: 0 }}
+                          >
                             <DatePicker
                               label="Departure Date"
                               value={departureDate}
-                              onChange={(newValue) => setDepartureDate(newValue)}
+                              onChange={(newValue) =>
+                                setDepartureDate(newValue)
+                              }
                               disablePast
                               slotProps={{
                                 textField: {
@@ -146,7 +182,16 @@ export default function Main() {
                       </Box>
 
                       {/* Right half: Traveler & Business equally */}
-                      <Box sx={{ width: "50%", display: "flex", gap: 2 }}>
+                      <Box
+                        sx={{
+                          width: "50%",
+                          display: "flex",
+                          gap: 2,
+                          "@media (max-width:780px)": {
+                            width: "100%",
+                          },
+                        }}
+                      >
                         <TextField
                           fullWidth
                           select
@@ -167,7 +212,9 @@ export default function Main() {
                           onChange={(e) => setTravelClass(e.target.value)}
                           sx={{ backgroundColor: "#fff", borderRadius: 1 }}
                         >
-                          <MenuItem value="Premium Economy">Premium Economy</MenuItem>
+                          <MenuItem value="Premium Economy">
+                            Premium Economy
+                          </MenuItem>
                           <MenuItem value="Business">Business</MenuItem>
                           <MenuItem value="First">First</MenuItem>
                         </TextField>
@@ -197,25 +244,54 @@ export default function Main() {
                 </Grid>
               </Box>
             </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/icons/singapore.svg"
-                alt="Singapore Airlines"
-                width={100}
-                height={60}
-              />
-              <Image
-                src="/icons/emirates.svg"
-                alt="Emirates Airlines"
-                width={100}
-                height={60}
-              />
-              <Image
-                src="/icons/qatar.svg"
-                alt="Qatar Airlines"
-                width={100}
-                height={60}
-              />
+            
+            <div className={styles.imageGrid}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src="/icons/white-singapore.svg"
+                  alt="Singapore Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+                <Image
+                  src="/icons/white-emirates.svg"
+                  alt="Emirates Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+                <Image
+                  src="/icons/white-qatar.svg"
+                  alt="Qatar Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+              </div>
+              <div className={styles.imageContainer}>
+                <Image
+                  src="/icons/white-singapore.svg"
+                  alt="Singapore Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+                <Image
+                  src="/icons/white-emirates.svg"
+                  alt="Emirates Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+                <Image
+                  src="/icons/white-qatar.svg"
+                  alt="Qatar Airlines"
+                  width={100}
+                  height={60}
+                  className={isMobile ? styles.smallImage : ""}
+                />
+              </div>
             </div>
           </div>
         </div>

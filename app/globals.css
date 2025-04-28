@@ -42,17 +42,12 @@ a {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1130px;
   margin: 0 auto;
 }
 
-@media (max-width: 1441px) {
+/* @media (max-width: 1441px) {
   .container {
     max-width: 1130px;
-  }
-}
-/* @media (max-width: 1024px) {
-  .container {
-    max-width: 950px;
   }
 } */

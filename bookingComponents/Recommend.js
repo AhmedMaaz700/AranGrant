@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import sliderData from "../jsons/sliderData.json";
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
 function NextArrow(props) {
     const { onClick } = props;
@@ -71,21 +71,28 @@ return (
 }
 
 export default function Recommend() {
+  const isMobile = useMediaQuery("(max-width:780px)");
+
     const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        autoplay: false,
-        autoplaySpeed: 3000,
-        arrows: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        responsive: [
-        //   { breakpoint: 1024, settings: { slidesToShow: 2 } },
-        //   { breakpoint: 600,  settings: { slidesToShow: 2 } },
-        ],
+      infinite: true,
+      speed: 500,
+      slidesToShow: isMobile ? 1 : 2,
+      slidesToScroll: isMobile ? 1 : 2,
+      arrows: !isMobile,
+      dots: !isMobile,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      responsive: [
+        {
+          breakpoint: 780,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+      ],
     };    
 
     return (
@@ -129,32 +136,99 @@ export default function Recommend() {
 
           <div className={styles.slider}>
             <Slider {...settings}>
-              {sliderData.map((item, idx) => (
-                <div key={idx}>
-                  <div className={styles.card}>
-                    <div className={styles.imgContainer}>
-                      <Box
-                        sx={{
-                          width: 64,
-                          height: 64,
-                          borderRadius: "50%",
-                          overflow: "hidden",
-                        }}
-                      >
-                        <Image src={item.img} alt={item.name} width={64} height={64} style={{ objectFit: "cover" }} />
-                      </Box>
-                      <div>
-                        <p className={styles.name}>{item.name}</p>
-                        <Image src="/icons/stars.svg" alt="stars" width={100} height={30} />
+              {isMobile
+                ? sliderData
+                    .reduce(
+                      (rows, key, index) =>
+                        (index % 2 === 0
+                          ? rows.push([key])
+                          : (rows[rows.length - 1].push(key), rows)) && rows,
+                      []
+                    )
+                    .map((pair, idx) => (
+                      <div key={idx}>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "16px",
+                          }}
+                        >
+                          {pair.map((item, idx2) => (
+                            <div key={idx2} className={styles.card}>
+                              <div className={styles.imgContainer}>
+                                <Box
+                                  sx={{
+                                    width: 64,
+                                    height: 64,
+                                    borderRadius: "50%",
+                                    overflow: "hidden",
+                                  }}
+                                >
+                                  <Image
+                                    src={item.img}
+                                    alt={item.name}
+                                    width={64}
+                                    height={64}
+                                    style={{ objectFit: "cover" }}
+                                  />
+                                </Box>
+                                <div>
+                                  <p className={styles.name}>{item.name}</p>
+                                  <Image
+                                    src="/icons/stars.svg"
+                                    alt="stars"
+                                    width={100}
+                                    height={30}
+                                  />
+                                </div>
+                              </div>
+                              <div className={styles.commentContainer}>
+                                <div className={styles.blank}></div>
+                                <p className={styles.comment}>{item.comment}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                : sliderData.map((item, idx) => (
+                    <div key={idx}>
+                      <div className={styles.card}>
+                        <div className={styles.imgContainer}>
+                          <Box
+                            sx={{
+                              width: 64,
+                              height: 64,
+                              borderRadius: "50%",
+                              overflow: "hidden",
+                            }}
+                          >
+                            <Image
+                              src={item.img}
+                              alt={item.name}
+                              width={64}
+                              height={64}
+                              style={{ objectFit: "cover" }}
+                            />
+                          </Box>
+                          <div>
+                            <p className={styles.name}>{item.name}</p>
+                            <Image
+                              src="/icons/stars.svg"
+                              alt="stars"
+                              width={100}
+                              height={30}
+                            />
+                          </div>
+                        </div>
+                        <div className={styles.commentContainer}>
+                          <div className={styles.blank}></div>
+                          <p className={styles.comment}>{item.comment}</p>
+                        </div>
                       </div>
                     </div>
-                    <div className={styles.commentContainer}>
-                        <div className={styles.blank}></div>
-                        <p className={styles.comment}>{item.comment}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                  ))}
             </Slider>
           </div>
         </div>

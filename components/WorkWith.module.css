@@ -29,7 +29,7 @@
 .imageGrid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 14px 24px;
     margin-top: 20px;
 }
 
@@ -38,4 +38,14 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+@media (max-width: 780px) {
+    .imageGrid {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        justify-content: space-around;
+    }
 }

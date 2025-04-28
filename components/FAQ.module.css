@@ -1,6 +1,6 @@
 .FAQ {
     background-color: #fff;
-    padding-top: 48px;
+    padding-top: 32px;
     padding-right: 24px;
     padding-bottom: 32px;
     padding-left: 24px;
@@ -16,4 +16,10 @@
     color: #171D2E;
     text-align: left;
     text-transform: uppercase;
+}
+
+@media (max-width: 780px) {
+    .FAQ h2 {
+        text-align: center;
+    }
 }
