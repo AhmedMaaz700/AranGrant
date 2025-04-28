@@ -42,10 +42,15 @@ const CustomSelect = styled(Select)(({ theme }) => ({
 }));
 
 const countryCodes = [
-    { code: "+1", label: "🇺🇸" },
-    { code: "+91", label: "🇮🇳" },
-    { code: "+44", label: "🇬🇧" },
+    { code: "+1", label: "https://flagsapi.com/US/shiny/64.png" },
+    { code: "+91", label: "https://flagsapi.com/IN/shiny/64.png" },
+    { code: "+44", label: "https://flagsapi.com/GB/shiny/64.png" },
 ];
+// const countryCodes = [
+//     { code: "+1", label: "🇺🇸" },
+//     { code: "+91", label: "🇮🇳" },
+//     { code: "+44", label: "🇬🇧" },
+// ];
 
 export default function Main() { 
     const isMobile = useMediaQuery("(max-width:1200px)");
@@ -258,6 +263,9 @@ export default function Main() {
                   width: "100%",
                   padding: "24px 40px",
                   margin: "auto",
+                  '@media (max-width: 600px)': {
+                    padding: "16px 16px",
+                  },
                 }}
               >
                 <Stack spacing={2}>
@@ -281,7 +289,7 @@ export default function Main() {
                           sx={{
                             color: "#FFF",
                             fontWeight: "500",
-                            fontSize: "16px",
+                            fontSize: "14px",
                             lineHeight: "1.3",
                           }}
                         >
@@ -571,9 +579,7 @@ export default function Main() {
                               value={countryCode}
                               onChange={(e) => {
                                 setCountryCode(e.target.value);
-                                saveBookingData({
-                                  countryCode: e.target.value,
-                                });
+                                saveBookingData({ countryCode: e.target.value });
                               }}
                               variant="standard"
                               disableUnderline
@@ -582,14 +588,22 @@ export default function Main() {
                                   display: "flex",
                                   alignItems: "center",
                                   gap: 0.5,
-                                  paddingRight: 0,
+                                  pr: 0,
                                   cursor: "pointer",
                                 },
                               }}
                             >
                               {countryCodes.map((option) => (
                                 <MenuItem key={option.code} value={option.code}>
-                                  {option.label} {option.code}
+                                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                                    <Image
+                                      src={option.label}
+                                      alt={option.code}
+                                      width={20}
+                                      height={20}
+                                    />
+                                    {option.code}
+                                  </Box>
                                 </MenuItem>
                               ))}
                             </Select>
@@ -610,11 +624,13 @@ export default function Main() {
                       <Button
                         variant="contained"
                         fullWidth
+                        size="large"
                         sx={{
                           mt: 2,
                           backgroundColor: "#1A7064",
                           textTransform: "none",
                           cursor: "pointer",
+                          padding: "14px"
                         }}
                         onClick={handleGetFreeQuote}
                       >
@@ -723,48 +739,51 @@ export default function Main() {
             </div>
           </div>
         </div>
+        
         <Modal
           open={open}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{marginBottom: 2}}>
+          <Box
+            sx={{
+              background: "linear-gradient(220deg, #1E1E2B 14.51%, #45455B 85.49%)",
+              color: "#fff",
+              padding: 4,
+              borderRadius: 2,
+              maxWidth: 500,
+              margin: "auto",
+              mt: "10%",
+              boxShadow: 24,
+            }}
+          >
+            <Typography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{
+                marginBottom: 2,
+                color: "#fff",
+                fontSize: "24px",
+                fontWeight: 600,
+                borderRadius: 1,
+              }}
+            >
               Booking Data
             </Typography>
 
             {bookingData ? (
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                <Typography>
-                  <strong>Trip Type:</strong> {bookingData.tripType}
-                </Typography>
-                <Typography>
-                  <strong>Travel Class:</strong> {bookingData.travelClass}
-                </Typography>
-                <Typography>
-                  <strong>Traveler Count:</strong> {bookingData.travelerCount}
-                </Typography>
-                <Typography>
-                  <strong>From:</strong> {bookingData.from}
-                </Typography>
-                <Typography>
-                  <strong>To:</strong> {bookingData.to}
-                </Typography>
-                <Typography>
-                  <strong>Departure Date:</strong>{" "}
-                  {new Date(bookingData.departureDate).toLocaleDateString()}
-                </Typography>
-                <Typography>
-                  <strong>Phone:</strong> {bookingData.countryCode}{" "}
-                  {bookingData.phoneNumber}
-                </Typography>
-                <Typography>
-                  <strong>Name:</strong> {bookingData.name}
-                </Typography>
-                <Typography>
-                  <strong>Email:</strong> {bookingData.email}
-                </Typography>
+                <Typography><strong>Trip Type:</strong> {bookingData.tripType}</Typography>
+                <Typography><strong>Travel Class:</strong> {bookingData.travelClass}</Typography>
+                <Typography><strong>Traveler Count:</strong> {bookingData.travelerCount}</Typography>
+                <Typography><strong>From:</strong> {bookingData.from}</Typography>
+                <Typography><strong>To:</strong> {bookingData.to}</Typography>
+                <Typography><strong>Departure Date:</strong> {new Date(bookingData.departureDate).toLocaleDateString()}</Typography>
+                <Typography><strong>Phone:</strong> {bookingData.countryCode} {bookingData.phoneNumber}</Typography>
+                <Typography><strong>Name:</strong> {bookingData.name}</Typography>
+                <Typography><strong>Email:</strong> {bookingData.email}</Typography>
               </Box>
             ) : (
               <Typography>No data found...</Typography>

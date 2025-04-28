@@ -1,5 +1,5 @@
 import styles from "./Flights.module.css";
-import { styled } from '@mui/system';
+import { fontSize, styled } from '@mui/system';
 import { useState } from 'react';
 import { Tabs, Tab, Card, CardContent, CardMedia, Typography, Button, Grid } from '@mui/material';
 import flightsData from '../jsons/flightsData.json';
@@ -15,24 +15,29 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
     '& .MuiTabs-indicator': {
         display: 'none',
     },
+    [theme.breakpoints.down('480')]: {
+      padding: '0 1rem',
+    },
 }));
   
 const CustomTab = styled(Tab)(({ theme }) => ({
-textTransform: 'none',
-minHeight: 'auto',
-fontWeight: 500,
-padding: '6px 16px',
-borderRadius: '10px',
-border: '1px solid #DEE0E7',
-marginRight: theme.spacing(1),
-color: '#333',
-backgroundColor: '#fff',
-'&.Mui-selected': {
-    backgroundColor: '#3A3E4A',
-    color: '#fff',
-    borderColor: '#1a5d1a',
-    fontWeight: 400,
-},
+  textTransform: 'none',
+  minHeight: 'auto',
+  fontWeight: 500,
+  padding: '6px 16px',
+  borderRadius: '10px',
+  border: '1px solid #DEE0E7',
+  marginRight: theme.spacing(1),
+  color: '#333',
+  backgroundColor: '#fff',
+  '&.Mui-selected': {
+      backgroundColor: '#3A3E4A',
+      color: '#fff',
+      fontWeight: 400,
+  },
+  [theme.breakpoints.down('480')]: {
+    padding: '2px 0 ',
+  },
 }));
 
 export default function Flights() {
@@ -91,16 +96,32 @@ export default function Flights() {
                     padding: "0px",
                     paddingTop: "16px",
                     paddingBottom: "0px",
+                    '@media (max-width: 780px)': {                     
+                      paddingBottom: "0px !important",
+                    },
                   }}
                 >
                   <div>
-                    <Typography variant="h6" fontWeight={600} fontSize='18px'>{city.city}</Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="h6" fontWeight={600} fontSize='18px' sx={{
+                      '@media (max-width: 780px)': {
+                        fontSize: '16px',
+                      },
+                    }}
+                    >{city.city}</Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{
+                      '@media (max-width: 780px)': {
+                        fontSize: '13px',
+                      },
+                    }}>
                       {city.type}
                     </Typography>
                   </div>
                   <div className={styles.bookingDetails}>
-                    <Typography variant="h6" fontWeight={600} fontSize='28px'>
+                    <Typography variant="h6" fontWeight={600} fontSize='28px' sx={{
+                      '@media (max-width: 780px)': {
+                        fontSize: '25px',
+                      },
+                    }}>
                       ₹{city.price.toLocaleString()}
                     </Typography>
                     <Button

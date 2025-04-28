@@ -16,6 +16,7 @@ export default function Asset() {
     slidesToScroll: 2,
     arrows: false,
     dots: true,
+    mobileFirst: true,
     responsive: [
       {
         breakpoint: 650,

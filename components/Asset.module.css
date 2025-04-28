@@ -146,6 +146,14 @@
     } 
 }  
 
+@media (max-width: 600px) {
+    .slider {
+      width: 100%;
+      max-width: clamp(320px, calc(100vw - 40px), 560px);
+      margin-inline: auto;
+    }
+}  
+
 @media (max-width: 564px) {
     .subtext2 {
         flex-direction: column;
@@ -153,6 +161,11 @@
 
     .subtext2 p:not(.pTag2) {
         font-size: 14px;
-      }
-      
+    }
 }
+
+@media (max-width: 450px) {
+    .card {
+        height: 350px;
+    }
+}  
